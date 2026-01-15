@@ -2,7 +2,7 @@
 title: "Bloque I — Tema 2: Cortes Generales, Tribunal Constitucional y Defensor del Pueblo"
 description: "Órganos constitucionales: composición, funciones y funcionamiento de las Cortes Generales, el Tribunal Constitucional y el Defensor del Pueblo."
 pubDate: 2026-01-14
-heroImage: "/blog/bloqueI-tema2.jpg"
+#heroImage: "/blog/bloqueI-tema2.jpg"
 tags: ["TAI", "Bloque I", "Cortes Generales", "Tribunal Constitucional", "Defensor del Pueblo"]
 ---
 

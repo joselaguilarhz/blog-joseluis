@@ -2,7 +2,7 @@
 title: "Bloque I — Tema 1: Constitución Española de 1978, derechos y Corona"
 description: "Esquema completo para estudiar: caracteres, estructura, Título Preliminar, Título I (garantías y suspensión) y Título II (Corona y funciones del Rey)."
 pubDate: 2026-01-14
-heroImage: "/blog/bloqueI-tema1.png"
+#heroImage: "/blog/bloqueI-tema1.png"
 tags: ["TAI", "Bloque I", "Constitución", "Derechos", "Corona"]
 ---
 
