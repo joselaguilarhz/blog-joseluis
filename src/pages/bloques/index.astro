@@ -1,0 +1,84 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+const bloques = [
+  { slug: 'bloque-i', title: 'Bloque I', desc: 'Constitución, Cortes, TC y Defensor del Pueblo' },
+  { slug: 'bloque-ii', title: 'Bloque II', desc: 'Temas del Bloque II (prueba por ahora)' },
+  { slug: 'bloque-iii', title: 'Bloque III', desc: 'Temas del Bloque III (prueba por ahora)' },
+  { slug: 'bloque-iv', title: 'Bloque IV', desc: 'Temas del Bloque IV (prueba por ahora)' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${SITE_TITLE} — Bloques`} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: 960px;
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .grid li {
+        width: calc(50% - 1rem);
+      }
+      .card {
+        display: block;
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: var(--box-shadow);
+        text-decoration: none;
+      }
+      .title {
+        margin: 0 0 0.25rem 0;
+        color: rgb(var(--black));
+        line-height: 1.1;
+      }
+      .desc {
+        margin: 0;
+        color: rgb(var(--gray));
+      }
+      .card:hover .title,
+      .card:hover .desc {
+        color: rgb(var(--accent));
+      }
+      @media (max-width: 720px) {
+        .grid {
+          gap: 0.75rem;
+        }
+        .grid li {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Bloques</h1>
+
+      <ul class="grid">
+        {bloques.map((b) => (
+          <li>
+            <a class="card" href={`/bloques/${b.slug}/`}>
+              <h2 class="title">{b.title}</h2>
+              <p class="desc">{b.desc}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>
