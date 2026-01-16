@@ -1,0 +1,206 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const temario = [
+  {
+    bloque: 'Bloque I',
+    slug: 'bloque-i',
+    temaPrefix: 'bloque-i-tema',
+    titulo: 'Organizacion del Estado y Administracion Electronica',
+    temas: [
+      {
+        num: 1,
+        titulo:
+          'La Constitucion Espanola de 1978. Derechos y deberes fundamentales. Su garantia y suspension. La Corona: funciones constitucionales del Rey.',
+      },
+      {
+        num: 2,
+        titulo:
+          'Las Cortes Generales: atribuciones del Congreso de los Diputados y del Senado. El Tribunal Constitucional: composicion y atribuciones. El Defensor del Pueblo.',
+      },
+      {
+        num: 3,
+        titulo:
+          'El Gobierno: composicion, nombramiento y cese. Las funciones del Gobierno. Relaciones entre el Gobierno y las Cortes Generales.',
+      },
+      {
+        num: 4,
+        titulo: 'La Administracion General del Estado: competencias y estructura.',
+      },
+      {
+        num: 5,
+        titulo:
+          'La organizacion territorial del Estado: Comunidades Autonomas y Entidades Locales.',
+      },
+      {
+        num: 6,
+        titulo: 'El Poder Judicial: organizacion y competencias.',
+      },
+      {
+        num: 7,
+        titulo: 'La Union Europea: instituciones y funcionamiento.',
+      },
+      {
+        num: 8,
+        titulo: 'Proteccion de datos y seguridad de la informacion.',
+      },
+      {
+        num: 9,
+        titulo:
+          'Instrumentos para el acceso electronico a las Administraciones publicas: sedes electronicas, canales y puntos de acceso, identificacion y autenticacion. Infraestructuras y servicios comunes en materia de administracion electronica.',
+      },
+    ],
+  },
+  {
+    bloque: 'Bloque II',
+    slug: 'bloque-ii',
+    temaPrefix: 'bloqueII-tema',
+    titulo: 'Tecnologia Basica',
+    temas: [
+      {
+        num: 1,
+        titulo:
+          'Informatica basica. Representacion y comunicacion de la informacion. Arquitectura de ordenadores. Componentes internos de los equipos microinformaticos.',
+      },
+      {
+        num: 2,
+        titulo:
+          'Perifericos: conectividad y administracion. Elementos de impresion, almacenamiento, visualizacion y digitalizacion.',
+      },
+      {
+        num: 3,
+        titulo:
+          'Tipos abstractos y estructuras de datos. Organizaciones de ficheros. Algoritmos. Formatos de informacion y ficheros.',
+      },
+      {
+        num: 4,
+        titulo: 'Sistemas operativos. Windows, Unix, Linux y moviles.',
+      },
+      {
+        num: 5,
+        titulo: 'Sistemas de gestion de bases de datos: relacionales, orientados a objetos y NoSQL.',
+      },
+    ],
+  },
+  {
+    bloque: 'Bloque III',
+    slug: 'bloque-iii',
+    temaPrefix: 'bloqueIII-tema',
+    titulo: 'Desarrollo de Sistemas',
+    temas: [
+      { num: 1, titulo: 'Modelado de datos. Diseno de bases de datos. Modelo logico relacional. Normalizacion.' },
+      {
+        num: 2,
+        titulo:
+          'Lenguajes de programacion. Representacion de datos. Instrucciones condicionales. Bucles. Procedimientos y funciones.',
+      },
+      { num: 3, titulo: 'Lenguajes SQL. Procedimientos almacenados. Eventos y disparadores.' },
+      { num: 4, titulo: 'Programacion orientada a objetos. UML. Patrones de diseno.' },
+      { num: 5, titulo: 'Arquitecturas Java EE/Jakarta EE y .NET.' },
+      { num: 6, titulo: 'Arquitectura cliente/servidor y multicapas. Servicios web.' },
+      { num: 7, titulo: 'Desarrollo web. HTML, XML, navegadores, scripts.' },
+      { num: 8, titulo: 'Accesibilidad, diseno universal y usabilidad. Seguridad en desarrollo.' },
+      { num: 9, titulo: 'Repositorios, generacion de codigo y documentacion. Metodologias y control de versiones.' },
+    ],
+  },
+  {
+    bloque: 'Bloque IV',
+    slug: 'bloque-iv',
+    temaPrefix: 'bloqueIV-tema',
+    titulo: 'Sistemas y Comunicaciones',
+    temas: [
+      { num: 1, titulo: 'Administracion del sistema operativo. Mantenimiento y reparacion.' },
+      { num: 2, titulo: 'Administracion de bases de datos. Virtualizacion. Backup.' },
+      { num: 3, titulo: 'Administracion de correo electronico. Contenedores y microservicios.' },
+      { num: 4, titulo: 'Administracion de redes. Monitorizacion y dispositivos.' },
+      { num: 5, titulo: 'Seguridad de la informacion. Seguridad fisica y logica. Criptografia.' },
+      { num: 6, titulo: 'Comunicaciones. Medios, equipos y redes.' },
+      { num: 7, titulo: 'Modelos TCP/IP y OSI. Protocolos.' },
+      { num: 8, titulo: 'Internet. Servicios y protocolos.' },
+      { num: 9, titulo: 'Administracion en la nube. Virtualizacion y contenedores.' },
+      { num: 10, titulo: 'Automatizacion y orquestacion de procesos IT.' },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title={`${SITE_TITLE} - Indice del temario`} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: 960px;
+      }
+      .intro {
+        max-width: 72ch;
+        color: rgb(var(--gray));
+      }
+      .bloque {
+        margin-top: 2rem;
+        padding: 1.25rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: var(--box-shadow);
+      }
+      .bloque h2 {
+        margin: 0 0 0.35rem 0;
+        line-height: 1.1;
+      }
+      .bloque p {
+        margin: 0 0 1rem 0;
+        color: rgb(var(--gray));
+      }
+      .temas {
+        margin: 0;
+        padding-left: 1.25rem;
+      }
+      .temas li {
+        margin: 0.35rem 0;
+      }
+      .temas a {
+        text-decoration: none;
+        color: rgb(var(--black));
+      }
+      .temas a:hover {
+        color: rgb(var(--accent));
+      }
+      @media (max-width: 720px) {
+        main {
+          width: calc(100% - 2em);
+        }
+        .bloque {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Indice del temario TAI 2025</h1>
+      <p class="intro">
+        Temario oficial organizado por bloques. Cada tema enlaza a su ficha para
+        estudiar y repasar.
+      </p>
+
+      {temario.map((b) => (
+        <section class="bloque">
+          <h2>{b.bloque}</h2>
+          <p>{b.titulo}</p>
+          <ol class="temas">
+            {b.temas.map((t) => (
+              <li>
+                <a href={`/blog/${b.slug}/${b.temaPrefix}${t.num}/`}>{t.titulo}</a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </main>
+    <Footer />
+  </body>
+</html>
